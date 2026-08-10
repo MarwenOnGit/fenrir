@@ -1,0 +1,16 @@
+[project]
+name = "fenrir"
+version = "0.1.0"
+description = "Azure CLI authenticator — email/password login with automatic MFA fallback"
+requires-python = ">=3.11"
+dependencies = ["typer>=0.12", "msal>=1.24", "rich", "requests>=2.31"]
+
+[project.scripts]
+fenrir = "fenrir.cli:app"
+
+[project.optional-dependencies]
+dev = ["pytest", "pytest-cov"]
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"

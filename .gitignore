@@ -1,0 +1,61 @@
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+dist/
+build/
+
+# Virtual environment
+.venv/
+.venv*/
+
+# Harvest output (post-exploit blob/image dumps)
+dump/*
+dump/
+dump*/
+
+# Node
+node_modules/
+
+# Testing
+.pytest_cache/
+coverage/
+
+# Token cache (secrets)
+~/.config/fenrir/
+fenrir_tokens/
+
+# Extracted tokens
+*.token
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Environment
+.env
+.env.*
+
+# Coverage reports
+.coverage
+htmlcov/
+
+# Logs
+*.log
+
+# OS artifacts
+*~
+
+# Debug / backup
+fenrir_debug.py
+*.bak
+*.ow
+
+# opencode tooling (local)
+.opencode/
