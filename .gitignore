@@ -13,7 +13,7 @@ build/
 dump/*
 dump/
 dump*/
-
+fenrir.drawio
 # Node
 node_modules/
 
@@ -59,3 +59,10 @@ fenrir_debug.py
 
 # opencode tooling (local)
 .opencode/
+
+# graphify output (local knowledge-graph tooling)
+graphify-out/
+
+# Internship report (lives outside the code repo)
+png/
+report/
