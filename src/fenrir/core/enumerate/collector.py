@@ -1,6 +1,7 @@
 from __future__ import annotations
 
 import logging
+import time
 from concurrent.futures import ThreadPoolExecutor, as_completed
 
 import requests
@@ -112,6 +113,7 @@ class EnumerateCollector:
         sep = "&" if "?" in path else "?"
         url = f"{ARM_API}{path}{sep}api-version={api_version}"
         try:
+            time.sleep(0.05)
             resp = requests.get(url, headers=headers, timeout=30)
             if resp.status_code == 403:
                 log.warning("Access denied: %s", path)
@@ -135,6 +137,7 @@ class EnumerateCollector:
         url = f"{ARM_API}{path}?api-version={api_version}"
         while url:
             try:
+                time.sleep(0.05)
                 resp = requests.get(url, headers=headers, timeout=30)
                 if resp.status_code == 403:
                     break
@@ -351,8 +354,8 @@ class EnumerateCollector:
                     start_time=s.get("startDateTime"),
                     end_time=s.get("endDateTime"),
                 ))
-        except Exception:
-            pass
+        except Exception as e:
+            log.debug("Failed to parse PIM eligibility: %s", e)
 
     def _collect_subscription_resources(self, sub: Subscription, principal_id: str) -> None:
         rgs_data = self._paginate_arm(
