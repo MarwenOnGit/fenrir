@@ -158,3 +158,32 @@ def test_tokens_map_absent_for_legacy_entries():
     entry = _entry()
     assert "tokens" not in entry
     assert get_audience_token(entry, "https://management.azure.com") == "token-1"
+
+
+def test_get_audience_token_rejects_wrong_audience_fallback():
+    import base64
+    import json as _json
+
+    def _jwt(aud):
+        def _enc(data):
+            return base64.urlsafe_b64encode(data).rstrip(b"=").decode()
+
+        header = _enc(_json.dumps({"alg": "none"}).encode())
+        payload = _enc(_json.dumps({"aud": aud}).encode())
+        return f"{header}.{payload}.sig"
+
+    acr = _jwt("https://containerregistry.azure.net")
+    arm = _jwt("https://management.azure.com")
+
+    entry = _entry(
+        access_token=acr,
+        resource="https://containerregistry.azure.net",
+        tokens={
+            "https://containerregistry.azure.net": {"access_token": acr},
+        },
+    )
+    assert get_audience_token(entry, "https://containerregistry.azure.net") == acr
+    assert get_audience_token(entry, "https://management.azure.com") is None
+
+    arm_entry = _entry(access_token=arm, resource="https://management.azure.com")
+    assert get_audience_token(arm_entry, "https://management.azure.com") == arm
