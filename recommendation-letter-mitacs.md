@@ -14,9 +14,9 @@
 
 **To the Mitacs Selection Committee,**
 
-**Re: Recommendation of Marwen Ben Ahmed for the [Mitacs Globalink Research Internship / Accelerate / program name]**
+**Re: Recommendation of Marwen Ben Ahmed for the Mitacs Globalink Research Internship**
 
-I am writing to offer my strong recommendation for Marwen Ben Ahmed, a computer science engineering student whom I have known for [duration, e.g. two years] in my capacity as [relationship, e.g. his instructor in Systems Security and supervisor for his year-end project]. Over that time Marwen has distinguished himself as one of the more capable, self-directed, and intellectually curious students I have taught, and I believe he would be an excellent fit for a Mitacs research internship.
+I am writing to offer my strong recommendation for Marwen Ben Ahmed, a computer science engineering student whom I have known for [duration, e.g. two years] in my capacity as [relationship, e.g. his instructor in Systems Security and supervisor for his year-end project]. Over that time Marwen has distinguished himself as one of the more capable, self-directed, and intellectually curious students I have taught, and I believe he would be an excellent fit for the Mitacs Globalink Research Internship.
 
 My assessment is grounded in a substantial independent project Marwen designed and built between December 2025 and early 2026: an **Entra ID and hybrid adversary-emulation laboratory** focused on Adversary-in-the-Middle (AiTM) phishing against Microsoft 365 and Microsoft Entra ID. What impressed me was not any single component but the breadth of competence the project required and the maturity with which Marwen executed it end to end, on his own initiative.
 
